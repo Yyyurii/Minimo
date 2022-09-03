@@ -3,22 +3,32 @@
 @import "header";
 @import "header-burger";
 @import "slider";
+@import "footer";
 
-// .wrapper {}
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	min-height: 100%;
+}
+
+.main {
+	flex: 1 1 auto;
+}
 
 .container {
 	max-width: 1090px;
 	margin: 0 auto;
+	max-width: 100%;
 
-	@media(max-width: 1200px) {
+	@media (max-width: 1200px) {
 		margin: 0 70px;
 	}
 
-	@media(max-width: 1024px) {
+	@media (max-width: 1024px) {
 		margin: 0 40px;
 	}
 
-	@media(max-width: 767px) {
+	@media (max-width: 767px) {
 		margin: 0 15px;
 	}
 }

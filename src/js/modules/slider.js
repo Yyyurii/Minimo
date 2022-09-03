@@ -35,7 +35,6 @@ export const slider = () => {
   let width;
 
   function init() {
-    console.log("resize");
     width = document.querySelector(".slider").offsetWidth;
     sliderLine.style.width = width * images.length + "px";
     images.forEach((item) => {
@@ -110,7 +109,6 @@ export const slider = () => {
     let yDiff = y2 - y1;
 
     if (Math.abs(xDiff) > Math.abs(yDiff)) {
-      console.log("if");
       if (xDiff > 0) rollLeft();
       else rollRight();
     }
