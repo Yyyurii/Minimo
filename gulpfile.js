@@ -1,96 +1,59 @@
-const { src, dest, watch, parallel, series } = require("gulp");
+// Основной модуль
+import gulp from "gulp";
+// Импорт путей
+import { path } from "./gulp/config/path.js";
+// Импорт общих плагинов
+import { plugins } from "./gulp/config/plugins.js";
 
-const scss = require("gulp-sass")(require("sass"));
-const concat = require("gulp-concat");
-const browserSync = require("browser-sync").create();
-const uglify = require("gulp-uglify-es").default;
-const autoprefixer = require("gulp-autoprefixer");
-const imagemin = require("gulp-imagemin");
-const del = require("del");
-const fileInclude = require("gulp-file-include");
-
-function browsersync() {
-  browserSync.init({
-    server: {
-      baseDir: "app/",
-    },
-  });
+// Передаем значения в глобальную переменную
+global.app = {
+	isBuild: process.argv.includes('--build'),
+	isDev: !process.argv.includes('--build'),
+	path: path,
+	gulp: gulp,
+	plugins: plugins
 }
 
-function cleanDist() {
-  return del("dist");
+// Импорт задач
+import { copy } from "./gulp/tasks/copy.js";
+import { reset } from "./gulp/tasks/reset.js";
+import { html } from "./gulp/tasks/html.js";
+import { server } from "./gulp/tasks/server.js";
+import { scss } from "./gulp/tasks/scss.js";
+import { js } from "./gulp/tasks/js.js";
+import { images } from "./gulp/tasks/images.js";
+import { otfToTtf, ttfToWoff, fontsStyle } from "./gulp/tasks/fonts.js";
+import { svgSpriteTask } from "./gulp/tasks/svg-sprive.js";
+import { zip } from "./gulp/tasks/zip.js";
+import { ftp } from "./gulp/tasks/ftp.js";
+
+// Наблюдатель за изменениями в файлах
+function watcher() {
+	gulp.watch(path.watch.files, copy);
+	gulp.watch(path.watch.html, html); //gulp.series(html, ftp)
+	gulp.watch(path.watch.scss, scss);
+	gulp.watch(path.watch.js, js);
+	gulp.watch(path.watch.images, images);
 }
 
-function scripts() {
-  return src(["app/js/index.js"])
-    .pipe(concat("index.min.js"))
-    .pipe(uglify())
-    .pipe(dest("app/js"))
-    .pipe(browserSync.stream());
-}
+// Последовательная обработака шрифтов
+const fonts = gulp.series(otfToTtf, ttfToWoff, fontsStyle);
 
-function html() {
-  return src(["app/main.html"])
-    .pipe(concat("index.html"))
-    .pipe(fileInclude())
-    // .pipe(dest("app/"))
-    .pipe(browserSync.stream());
-}
+// Основные задачи
+const mainTasks = gulp.series(fonts, gulp.parallel(copy, html, scss, js, images, svgSpriteTask));
 
-function images() {
-  return src("app/images/**/*")
-    .pipe(
-      imagemin([
-        imagemin.gifsicle({ interlaced: true }),
-        imagemin.mozjpeg({ quality: 75, progressive: true }),
-        imagemin.optipng({ optimizationLevel: 5 }),
-        imagemin.svgo({
-          plugins: [{ removeViewBox: true }, { cleanupIDs: false }],
-        }),
-      ])
-    )
-    .pipe(dest("dist/images"));
-}
+// Построение сценариев выполнения задач
+const dev = gulp.series(reset, mainTasks, gulp.parallel(watcher, server));
+const build = gulp.series(reset, mainTasks);
+const deployZIP = gulp.series(reset, mainTasks, zip);
+const deployFTP = gulp.series(reset, mainTasks, ftp);
 
-function styles() {
-  return src("app/scss/style.scss")
-    .pipe(scss({ outputStyle: "compressed" }))
-    .pipe(concat("style.min.css"))
-    .pipe(
-      autoprefixer({
-        overrideBrowserslist: ["last 10 version"],
-        grid: true,
-      })
-    )
-    .pipe(dest("app/css"))
-    .pipe(browserSync.stream());
-}
+// Экспорт сценариев
+export { svgSpriteTask }
+export { dev }
+export { build }
+export { deployZIP }
+export { deployFTP }
 
-function build() {
-  return src(
-    [
-      "app/css/style.min.css",
-      "app/fonts/**/*",
-      "app/js/index.min.js",
-      "app/*.html",
-    ],
-    { base: "app" }
-  ).pipe(dest("dist"));
-}
-
-function watching() {
-  watch(["app/scss/**/*.scss"], styles);
-  watch(["app/js/index.js", "!app/js/index.min.js"], scripts);
-  watch(["app/**/*.html"]).on("change", browserSync.reload);
-}
-
-exports.styles = styles;
-exports.watching = watching;
-exports.browsersync = browsersync;
-exports.scripts = scripts;
-exports.images = images;
-exports.cleanDist = cleanDist;
-exports.html = html;
-
-exports.build = series(cleanDist, images, build);
-exports.default = parallel(styles, html, scripts, browsersync, watching);
+// Выполнение сценария по умолчанию
+gulp.task('default', dev);
