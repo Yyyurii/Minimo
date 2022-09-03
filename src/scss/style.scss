@@ -1,10 +1,11 @@
 @import "null";
 @import "fonts";
+@import "header";
+@import "header-burger";
 
-.wrapper {
-	margin: 0 auto;
-}
+// .wrapper {}
 
 .container {
-	max-width: 1060px;
+	max-width: 1090px;
+	margin: 0 auto;
 }

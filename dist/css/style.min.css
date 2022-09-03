@@ -190,10 +190,97 @@ h6 {
   font-weight: 700;
   font-style: normal;
 }
-.wrapper {
-  margin: 0 auto;
+.header {
+  display: flex;
+  align-items: center;
+  padding: 70px 15px 75px;
+  color: #b4ad9e;
+  position: relative;
 }
 
+.nav {
+  margin-left: auto;
+}
+.nav.active {
+  display: flex;
+  width: 100%;
+}
+.nav__list {
+  display: flex;
+  gap: 120px;
+}
+.nav__list.active {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  align-items: center;
+  left: calc(50% - 59px);
+  gap: 60px;
+  top: 150px;
+  opacity: 1;
+}
+@media (max-width: 1024px) {
+  .nav__list {
+    display: none;
+    opacity: 0;
+    transition: all ease 2s;
+  }
+}
+
+#menu_checkbox {
+  display: none;
+}
+
+.burger-menu {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  .burger-menu {
+    display: flex;
+  }
+  label {
+    position: absolute;
+    right: 2%;
+    margin: 0 auto;
+    display: block;
+    width: 30px;
+    height: 30px;
+    transform: translateY(-50%);
+    transition: 0.3s ease transform;
+    cursor: pointer;
+    z-index: 5;
+  }
+  label div {
+    width: 6px;
+    height: 4px;
+    background-color: black;
+    margin-left: 0;
+    margin-bottom: 6px;
+    border-radius: 4px;
+    transition: 0.3s ease width, 0.3s ease margin-left, 0.3s ease margin-bottom, 0.3s ease background-color;
+  }
+  label div:first-child {
+    width: 22px;
+  }
+  label div:nth-child(2) {
+    width: 15px;
+  }
+  label div:last-child {
+    width: 30px;
+    margin-bottom: 0;
+  }
+  #menu_checkbox.active + label {
+    transform: translateY(-50%) rotateZ(-90deg);
+  }
+  #menu_checkbox.active + label div {
+    width: 4px;
+    margin-left: 12px;
+    margin-bottom: 3px;
+    background-color: black;
+  }
+}
 .container {
-  max-width: 1060px;
+  max-width: 1090px;
+  margin: 0 auto;
 }
