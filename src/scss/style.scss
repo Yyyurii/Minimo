@@ -2,10 +2,23 @@
 @import "fonts";
 @import "header";
 @import "header-burger";
+@import "slider";
 
 // .wrapper {}
 
 .container {
 	max-width: 1090px;
 	margin: 0 auto;
+
+	@media(max-width: 1200px) {
+		margin: 0 70px;
+	}
+
+	@media(max-width: 1024px) {
+		margin: 0 40px;
+	}
+
+	@media(max-width: 767px) {
+		margin: 0 15px;
+	}
 }

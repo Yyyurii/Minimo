@@ -1,6 +1,8 @@
-import * as flsFunctions from "./modules/functions.js";
+import * as Functions from "./modules/functions.js";
+import * as Slider from "./modules/slider.js";
 
-flsFunctions.isWebp();
+Functions.isWebp();
+Slider.slider();
 
 const burgerMenu = document.querySelector(".burger-menu");
 burgerMenu.addEventListener("click", onBurgerMenu);
