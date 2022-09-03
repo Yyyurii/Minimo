@@ -1,0 +1,25 @@
+@mixin font($font_name, $file_name, $weight, $style) {
+	@font-face {
+		font-family: $font_name;
+		font-display: swap;
+		src: url("../fonts/#{$file_name}.ttf") format("truetype-variations");
+		font-weight: #{$weight};
+		font-style: #{$style};
+	}
+}
+
+@include font("PlayfairDisplay-Black", "PlayfairDisplay-Black", "900", "normal");
+@include font("PlayfairDisplay-BlackItalic", "PlayfairDisplay-BlackItalic", "900", "normal");
+@include font("PlayfairDisplay-Bold", "PlayfairDisplay-Bold", "800", "normal");
+@include font("PlayfairDisplay-BoldItalic", "PlayfairDisplay-BoldItalic", "800", "normal");
+@include font("PlayfairDisplay-RegularItalic", "PlayfairDisplay-RegularItalic", "400", "normal");
+@include font("PlayfairDisplay-Regular", "PlayfairDisplay-Regular", "400", "normal");
+
+@include font("Ubuntu-Bold", "Ubuntu-Bold", "700", "normal");
+@include font("Ubuntu-BoldItalic", "Ubuntu-BoldItalic", "700", "normal");
+@include font("Ubuntu-RegularItalic", "Ubuntu-RegularItalic", "400", "normal");
+@include font("Ubuntu-Light", "Ubuntu-Light", "300", "normal");
+@include font("Ubuntu-LightItalic", "Ubuntu-LightItalic", "300", "normal");
+@include font("Ubuntu-Medium", "Ubuntu-Medium", "500", "normal");
+@include font("Ubuntu-MediumItalic", "Ubuntu-MediumItalic", "500", "normal");
+@include font("Ubuntu-Regular", "Ubuntu-Regular", "400", "normal");
