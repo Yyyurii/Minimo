@@ -1,18 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
 @@include('html/head.html',{
-"title":"Главная"
+"title":"Homepage"
 })
 
 <body>
 	<div class="wrapper">
 		@@include('html/header.html',{})
-		<main>
+		<main class="main">
 			@@include('html/slider.html', {})
-		</main>
-		@@include('html/footer.html',{})
+			<div class="main-container">
+				@@include('html/article.html', {})
+				<div class="article__section-title article__section-title_bottom">Leave a comment</div>
+
+				<div class="posts-table">
+					<article class="article">
+						<img class="posts-table__img" src="./img/lifestyle1.jpg" alt="LIFESTYLE" />
+						<div class="article__section-title">LIFESTYLE</div>
+						<div class="article__title">More than just a music festival </div>
+						<div class="article__text">
+							Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque, architecto fugiat. Totam quas sunt
+							recusandae
+							atque doloremque excepturi beatae, sed numquam neque aspernatur nemo laboriosam aliquam, asperiores
+							quisquam quis
+							itaque, voluptate ullam temporibus!
+						</div>
+					</article>
+					<article class="article">
+						<img class="posts-table__img" src="./img/lifestyle2.jpg" alt="LIFESTYLE" />
+						<div class="article__section-title">LIFESTYLE</div>
+						<div class="article__title">Life tastes better with coffee</div>
+						<div class="article__text">
+							Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque, architecto fugiat. Totam quas sunt
+							recusandae
+							atque doloremque excepturi beatae, sed numquam neque aspernatur nemo laboriosam aliquam, asperiores
+							quisquam quis
+							itaque, voluptate ullam temporibus!
+						</div>
+					</article>
+					<article class="article">
+						<img class="posts-table__img" src="./img/photodiary1.jpg" alt="PHOTODIARY" />
+						<div class="article__section-title">PHOTODIARY</div>
+						<div class="article__title">American dream</div>
+						<div class="article__text">
+							Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque, architecto fugiat. Totam quas sunt
+							recusandae
+							atque doloremque excepturi beatae, sed numquam neque aspernatur nemo laboriosam aliquam, asperiores
+							quisquam quis
+							itaque, voluptate ullam temporibus!
+						</div>
+					</article>
+					<article class="article">
+						<img class="posts-table__img" src="./img/photodiary2.jpg" alt="PHOTODIARY" />
+						<div class="article__section-title">PHOTODIARY</div>
+						<div class="article__title">A day exploring the Alps</div>
+						<div class="article__text">
+							Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque, architecto fugiat. Totam quas sunt
+							recusandae
+							atque doloremque excepturi beatae, sed numquam neque aspernatur nemo laboriosam aliquam, asperiores
+							quisquam quis
+							itaque, voluptate ullam temporibus!
+						</div>
+					</article>
+				</div>
+			</div>
+
+			<div class="sign-up">
+				<div class="sign-up__container">
+					<div class="sign-up__title">Sign up for our newsletter!</div>
+					<form class="sign-up__form">
+						<input type="text" class="sign-up__input" placeholder="Enter a valid email address">
+						<button class="sign-up__btn"><img class="sign-up__btn-img" src="./img/icons/sendicon.png"
+								alt="send" /></button>
+					</form>
+				</div>
+			</div>
+
+			<div class="main-container">
+				<div class="posts-table">
+					<article class="article">
+						<img class="posts-table__img" src="./img/lifestyle3.jpg" alt="LIFESTYLE" />
+						<div class="article__section-title">LIFESTYLE</div>
+						<div class="article__title">Top 10 song for running</div>
+						<div class="article__text">
+							Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque, architecto fugiat. Totam quas sunt
+							recusandae
+							atque doloremque excepturi beatae, sed numquam neque aspernatur nemo laboriosam aliquam, asperiores
+							quisquam quis
+							itaque, voluptate ullam temporibus!
+						</div>
+					</article>
+					<article class="article">
+						<img class="posts-table__img" src="./img/lifestyle4.jpg" alt="LIFESTYLE" />
+						<div class="article__section-title">LIFESTYLE</div>
+						<div class="article__title">Cold winter days</div>
+						<div class="article__text">
+							Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque, architecto fugiat. Totam quas sunt
+							recusandae
+							atque doloremque excepturi beatae, sed numquam neque aspernatur nemo laboriosam aliquam, asperiores
+							quisquam quis
+							itaque, voluptate ullam temporibus!
+						</div>
+					</article>
+				</div>
+			</div>
+
+			@@include('html/load-more.html', {})
+
 	</div>
-	
+
+	</main>
+	@@include('html/footer.html',{})
+	</div>
+
 	<script src="js/app.min.js"></script>
 </body>
 

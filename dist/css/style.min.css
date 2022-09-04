@@ -489,6 +489,71 @@ h6 {
   border: 1px solid;
 }
 
+.post__gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  margin: 50px 0;
+}
+.post__gallery img {
+  max-width: 100%;
+}
+.post__quote {
+  font-family: PlayfairDisplay;
+  font-weight: 500;
+  font-style: italic;
+  padding: 0px 25px 50px;
+  color: #626262;
+  line-height: 32px;
+}
+.post .share {
+  color: #b4ad9e;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: 15px;
+  margin: 70px 0 80px;
+}
+.post .share__title {
+  margin: 0 10px 0 0;
+}
+
+.like {
+  background-color: #f0f0f0;
+  padding: 60px 0;
+}
+.like .article__title {
+  font-size: 26px;
+  margin: 30px 0 0;
+}
+.like__articles {
+  max-width: 930px;
+  display: flex;
+  gap: 40px;
+  margin: 0 auto;
+}
+.like__container {
+  max-width: 930px;
+  display: flex;
+  gap: 40px;
+  margin: 0 auto;
+}
+@media (max-width: 1200px) {
+  .like__container {
+    margin: 0 135px;
+  }
+}
+@media (max-width: 1024px) {
+  .like__container {
+    margin: 0 40px;
+  }
+}
+@media (max-width: 767px) {
+  .like__container {
+    margin: 0 15px;
+  }
+}
+
 body.scrollHide {
   overflow: hidden;
 }
