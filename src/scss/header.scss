@@ -1,9 +1,15 @@
 $headerColor: #b4ad9e;
 
+.header-container {
+  @media (min-width: 1200px) {
+    width: 100%;
+  }
+}
+
 .header {
   display: flex;
   align-items: center;
-  padding: 70px 15px 75px;
+  padding: 70px 0px 75px;
   color: $headerColor;
   position: relative;
 

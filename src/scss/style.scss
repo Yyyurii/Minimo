@@ -4,6 +4,13 @@
 @import "header-burger";
 @import "slider";
 @import "footer";
+@import "article";
+@import "table-posts";
+@import "sign-up";
+
+body.scrollHide {
+	overflow: hidden;
+}
 
 .wrapper {
 	display: flex;
@@ -18,10 +25,26 @@
 .container {
 	max-width: 1090px;
 	margin: 0 auto;
-	max-width: 100%;
 
 	@media (max-width: 1200px) {
 		margin: 0 70px;
+	}
+
+	@media (max-width: 1024px) {
+		margin: 0 40px;
+	}
+
+	@media (max-width: 767px) {
+		margin: 0 15px;
+	}
+}
+
+.main-container {
+	max-width: 930px;
+	margin: 0 auto;
+
+	@media (max-width: 1200px) {
+		margin: 0 135px;
 	}
 
 	@media (max-width: 1024px) {
