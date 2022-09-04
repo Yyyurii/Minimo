@@ -18,17 +18,17 @@
     color: #626262;
     line-height: 32px;
   }
+}
 
-  .share {
-    color: #b4ad9e;
-    display: flex;
-    justify-content: end;
-    align-items: center;
-    gap: 15px;
-    margin: 70px 0 80px;
+.share {
+  color: #b4ad9e;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: 15px;
+  margin: 70px 0 80px;
 
-    &__title {
-      margin: 0 10px 0 0;
-    }
+  &__title {
+    margin: 0 10px 0 0;
   }
 }

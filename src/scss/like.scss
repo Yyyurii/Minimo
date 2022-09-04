@@ -12,11 +12,16 @@
     display: flex;
     gap: 40px;
     margin: 0 auto;
+
+    @media(max-width: 767px) {
+      flex-direction: column;
+    }
   }
 
   &__container {
     max-width: 930px;
     display: flex;
+    flex-direction: column;
     gap: 40px;
     margin: 0 auto;
 

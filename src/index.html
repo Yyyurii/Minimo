@@ -64,11 +64,11 @@
 					</div>
 					<div class="post__share share">
 						<div class="share__title">SHARE</div>
-						<img src="./img/icons/fb-gray.png" alt="facebook">
-						<img src="./img/icons/tw-gray.png" alt="twitter">
-						<img src="./img/icons/g+.jpg" alt="google+">
-						<img src="./img/icons/tumblr.jpg" alt="tumblr">
-						<img src="./img/icons/pinterest.jpg" alt="pinterest">
+						<a href=""><img src="./img/icons/fb-gray.png" alt="facebook"></a>
+						<a href=""><img src="./img/icons/tw-gray.png" alt="twitter"></a>
+						<a href=""><img src="./img/icons/g+.jpg" alt="google+"></a>
+						<a href=""><img src="./img/icons/tumblr.jpg" alt="tumblr"></a>
+						<a href=""><img src="./img/icons/pinterest.jpg" alt="pinterest"></a>
 					</div>
 				</div>
 			</div>
@@ -77,22 +77,31 @@
 				<div class="like__container">
 					<div class="article__section-title">YOU MAY ALSO LIKE</div>
 					<div class="like__articles">
-						<article class="article">
-							<img class="article__img" src="./img/lifestyle4.jpg" alt="lifestyle" />
-							<div class="article__title">Cold winter days</div>
-						</article>
-						<article class="article">
-							<img class="article__img" src="./img/photodiary2.jpg" alt="lifestyle" />
-							<div class="article__title">A day exploring the Alps</div>
-						</article>
-						<article class="article">
-							<img class="article__img" src="./img/photodiary1.jpg" alt="lifestyle" />
-							<div class="article__title">American dream</div>
-						</article>
+						<a href="">
+							<article class="article">
+								<img class="article__img" src="./img/lifestyle4.jpg" alt="lifestyle" />
+								<div class="article__title">Cold winter days</div>
+							</article>
+						</a>
+						<a href="">
+							<article class="article">
+								<img class="article__img" src="./img/photodiary2.jpg" alt="lifestyle" />
+								<div class="article__title">A day exploring the Alps</div>
+							</article>
+						</a>
+						<a href="">
+							<article class="article">
+								<img class="article__img" src="./img/photodiary1.jpg" alt="lifestyle" />
+								<div class="article__title">American dream</div>
+							</article>
+						</a>
 					</div>
 				</div>
 			</section>
 
+			<div class="main-container">
+				@@include('html/comments.html', {})
+			</div>
 		</main>
 
 		@@include('html/footer.html',{})
