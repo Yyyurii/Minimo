@@ -28,7 +28,18 @@
     color: #626262;
     
   }
+
+  &__social {
+    display: flex;
+    gap: 15px;
+  }
+
   img {
     max-width: 100%;
+    width: 100%;
   }
+}
+
+.left-column .article__section-title {
+  margin: 0 0;
 }
