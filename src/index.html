@@ -6,124 +6,18 @@
 
 <body>
 	<div class="wrapper">
-		@@include('html/header.html',{})
 
 		<main class="main">
-			@@include('html/slider.html', {})
-
 			<div class="container">
-				<div class="main-container-sidebar">
-					<div class="left-column">
-						<article class="article">
-							<div class="article__section-title">PHOTODIARY</div>
-							<div class="article__title">The perfect weekend getaway</div>
-							<div class="article__text">
-								Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque, architecto fugiat. Totam quas sunt
-								recusandae
-								atque doloremque excepturi beatae, sed numquam neque aspernatur nemo laboriosam aliquam, asperiores
-								quisquam
-								quis
-								itaque, voluptate ullam temporibus! <strong>Amet quas, aliquid fugit praesentium impedit culpa nemo vero
-									sapiente enim fuga
-									repellat quisquam natus necessitatibus nostrum soluta consequatur.</strong> Numquam adipisci iure sint
-								doloribus delectus
-								nihil cum, autem magnam?Expedita porro non ipsum temporibus aspernatur excepturi architecto voluptatum
-								doloribus
-								consectetur blanditiis tempora, modi, quia amet, saepe incidunt hic est quibusdam ab in ad minus
-								repudiandae
-								harum
-								cum?
-
-								<br><br>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorem nam blanditiis, fugiat
-								eligendi
-								excepturi
-								quis explicabo iure illo dolores officia obcaecati magnam a, sint mollitia.
-							</div>
-						</article>
-						<div class="post">
-							<div class="post__gallery">
-								<img src="./img/cover1.jpg" alt="cover">
-								<img src="./img/cover2.jpg" alt="cover">
-								<img src="./img/cover3.jpg" alt="cover">
-							</div>
-							<div class="post__quote">
-								"Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, minima similique aliquam harum
-								molestias
-								totam
-								officiis quaerat suscipit earum blanditiis itaque deserunt dicta reiciendis amet iste voluptate ab, ad
-								quis
-								hic vitae voluptatum error, qui illo. Fugit aut deleniti vitae."
-							</div>
-							<div class="post__text article__text">
-								Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt dolores eligendi maxime ducimus saepe
-								corrupti. Temporibus delectus voluptas odio harum accusantium quos, deleniti odit cum tempora earum ipsa
-								dignissimos tempore optio ipsum pariatur est laboriosam tenetur animi voluptatum! Dicta tempora ut
-								suscipit
-								corporis odio veritatis dolore nostrum nemo sequi id distinctio ea, enim repellat, ipsum sunt. Laborum,
-								placeat esse! Quaerat ex pariatur, repellendus qui accusantium ab debitis dicta quo odit cupiditate?
-								Tempore
-								ipsum praesentium omnis culpa suscipit pariatur libero vero veritatis perferendis provident? Quis
-								veritatis
-								doloribus quae, culpa dolores rerum similique debitis odio, perferendis sint qui vitae numquam
-								assumenda!
-								Eaque, autem explicabo. Dignissimos magnam corrupti atque inventore eveniet sint mollitia non, natus
-								aliquam
-								nulla est ab similique quas provident corporis earum harum eaque? Quis inventore ipsa sint, minima nulla
-								velit
-								dolorem illum animi. Sunt placeat explicabo voluptatem doloribus vel dicta dolore, nam esse facere.
-								Reiciendis
-								sequi at temporibus distinctio commodi.
-							</div>
-							<div class="post__share share">
-								<div class="share__title">SHARE</div>
-								<a href=""><img src="./img/icons/fb-gray.png" alt="facebook"></a>
-								<a href=""><img src="./img/icons/tw-gray.png" alt="twitter"></a>
-								<a href=""><img src="./img/icons/g+.jpg" alt="google+"></a>
-								<a href=""><img src="./img/icons/tumblr.jpg" alt="tumblr"></a>
-								<a href=""><img src="./img/icons/pinterest.jpg" alt="pinterest"></a>
-							</div>
-						</div>
-					</div>
-					<div class="right-column">
-						@@include('html/sidebar.html', {})
-					</div>
+				<div class="links">
+					<a href="./homepage.html" class="article__section-title">Homepage</a>
+					<a href="./single-post-full-width.html" class="article__section-title">Single-post-full-width</a>
+					<a href="./single-post-sidebar.html" class="article__section-title">Single-post-sidebar</a>
 				</div>
-			</div>
-
-			<section class="like">
-				<div class="like__container">
-					<div class="article__section-title">YOU MAY ALSO LIKE</div>
-					<div class="like__articles">
-						<a href="">
-							<article class="article">
-								<img class="article__img" src="./img/lifestyle4.jpg" alt="lifestyle" />
-								<div class="article__title">Cold winter days</div>
-							</article>
-						</a>
-						<a href="">
-							<article class="article">
-								<img class="article__img" src="./img/photodiary2.jpg" alt="lifestyle" />
-								<div class="article__title">A day exploring the Alps</div>
-							</article>
-						</a>
-						<a href="">
-							<article class="article">
-								<img class="article__img" src="./img/photodiary1.jpg" alt="lifestyle" />
-								<div class="article__title">American dream</div>
-							</article>
-						</a>
-					</div>
-				</div>
-			</section>
-
-			<div class="main-container">
-				@@include('html/comments.html', {})
 			</div>
 		</main>
 
-		@@include('html/footer.html',{})
 	</div>
-
 	<script src="js/app.min.js"></script>
 </body>
 
